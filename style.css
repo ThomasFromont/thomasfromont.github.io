@@ -1,61 +1,273 @@
+:root {
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --text: #24292f;
+    --text-muted: #5b6570;
+    --heading: #14181c;
+    --accent: #b8622a;
+    --border: #e3e6ea;
+    --shadow: 0 1px 3px rgba(16, 22, 26, 0.06), 0 8px 24px rgba(16, 22, 26, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #14171a;
+        --surface: #1c2024;
+        --text: #c9d1d9;
+        --text-muted: #8b949e;
+        --heading: #f0f3f6;
+        --accent: #e08a4e;
+        --border: #2c3238;
+        --shadow: none;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 46rem;
     margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 1.5rem 3rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+@media (min-width: 48rem) {
+    .container {
+        margin: 2.5rem auto;
+        padding: 3rem 3.5rem 3.5rem;
+        border-radius: 12px;
+    }
 }
 
 header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: #444;
+    margin: 0 0 0.35rem;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--heading);
 }
 
-header p {
-    font-size: 0.9rem;
-    color: #777;
+header .effective-date {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Identity block — names the app and the developer exactly as they appear on the
+   Google Play and App Store listings. Play policy review rejects a privacy policy
+   that does not identify both. */
+.identity {
+    margin: 1.75rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+}
+
+.identity p {
+    margin: 0 0 0.75rem;
+}
+
+.identity p:last-child {
+    margin-bottom: 0;
+}
+
+.identity dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.35rem 1.25rem;
+    font-size: 0.9375rem;
+}
+
+.identity dt {
+    color: var(--text-muted);
+}
+
+.identity dd {
+    margin: 0;
+    color: var(--text);
+}
+
+@media (max-width: 30rem) {
+    .identity dl {
+        grid-template-columns: 1fr;
+        gap: 0 0;
+    }
+
+    .identity dd {
+        margin-bottom: 0.6rem;
+    }
 }
 
 main section {
-    margin: 20px 0;
+    margin: 2.25rem 0 0;
+}
+
+/* One .app-entry per published app. Everything that varies between apps lives
+   here — permissions, what stays on device, what is collected. The numbered
+   sections below apply to every app alike. To cover a new app, copy one entry
+   and add it to the list in the .identity block at the top of the page. */
+.app-entry {
+    margin: 1.25rem 0;
+    padding: 1.375rem 1.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.app-entry h3 {
+    margin-top: 0;
+    font-size: 1.0625rem;
+}
+
+.app-entry h3 .alias {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.app-entry .meta {
+    margin: 0 0 0.85rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.app-entry h4 {
+    font-size: 0.9375rem;
+    color: var(--heading);
+    margin: 1rem 0 0.3rem;
+}
+
+.app-entry ul {
+    margin: 0.3rem 0;
+}
+
+.app-entry li {
+    margin: 0.3rem 0;
 }
 
 main h2 {
-    font-size: 1.5rem;
-    color: #444;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
+    font-size: 1.1875rem;
+    line-height: 1.3;
+    color: var(--heading);
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
 }
 
-main p, main ul {
-    margin: 10px 0;
+main h3 {
+    font-size: 1rem;
+    color: var(--heading);
+    margin: 1.25rem 0 0.4rem;
+}
+
+main p,
+main ul {
+    margin: 0.75rem 0;
 }
 
 main ul {
-    padding-left: 20px;
+    padding-left: 1.25rem;
+}
+
+main li {
+    margin: 0.4rem 0;
+}
+
+a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 
 footer {
+    margin-top: 2.75rem;
+    padding-top: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+/* Home page */
+.home {
     text-align: center;
-    margin-top: 20px;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    color: #777;
-    border-top: 1px solid #ddd;
+}
+
+.home h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    letter-spacing: -0.02em;
+    color: var(--heading);
+    margin: 0 0 0.5rem;
+}
+
+.home .tagline {
+    font-size: 1.0625rem;
+    color: var(--text-muted);
+    margin: 0 0 2.25rem;
+}
+
+.app-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.25rem;
+    text-align: left;
+}
+
+.app-list li {
+    padding: 1.125rem 1.375rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.app-list strong {
+    display: block;
+    color: var(--heading);
+    font-size: 1.0625rem;
+}
+
+.app-list span {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
 }
