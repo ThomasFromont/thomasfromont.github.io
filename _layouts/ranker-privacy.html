@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{%- assign fr = false -%}
+{%- if page.lang == "fr" -%}{%- assign fr = true -%}{%- endif %}
+<html lang="{{ page.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ page.alternate_url }}">
+    <link rel="icon" href="/ranker/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="theme-ranker">
+    <div class="container">
+        <p class="lang-switch">
+            {%- if fr %}
+            <span aria-current="page">Français</span> · <a href="{{ page.alternate_url }}" hreflang="en" lang="en">English</a>
+            {%- else %}
+            <a href="{{ page.alternate_url }}" hreflang="fr" lang="fr">Français</a> · <span aria-current="page">English</span>
+            {%- endif %}
+        </p>
+
+        <!-- Names the app and the publishing entity as shown on the store listings.
+             Google Play policy review rejects a privacy policy that does not identify both.
+             The notice itself (below) is rendered verbatim from ranker/privacy*.md. -->
+        <div class="identity">
+            <dl>
+                <dt>{% if fr %}Application{% else %}App{% endif %}</dt>
+                <dd>
+                    Ranker — <code>com.icecode.Ranker</code> (App Store),
+                    <code>com.icecode.ranker</code> (Google Play)
+                </dd>
+
+                <dt>{% if fr %}Développeur{% else %}Developer{% endif %}</dt>
+                <dd>Thomas Fromont (IceCode)</dd>
+
+                <dt>Contact</dt>
+                <dd><a href="mailto:support@icecode.fr">support@icecode.fr</a></dd>
+            </dl>
+        </div>
+
+        <main class="notice">
+{{ content }}
+        </main>
+
+        <footer>
+            <p><a href="/ranker/">Ranker</a> · <a href="/">IceCode</a></p>
+            <p>© 2026 Thomas Fromont (IceCode). {% if fr %}Tous droits réservés.{% else %}All rights reserved.{% endif %}</p>
+        </footer>
+    </div>
+</body>
+</html>

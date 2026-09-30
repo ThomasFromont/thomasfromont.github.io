@@ -271,3 +271,61 @@ footer p {
     color: var(--text-muted);
     font-size: 0.9375rem;
 }
+
+/* Ranker pages — Skärgård palette. Only the colour tokens change; layout and
+   components are the shared ones above. */
+.theme-ranker {
+    --bg: #f1efe9;
+    --surface: #ffffff;
+    --heading: #141b1f;
+    --accent: #2e7294;
+    --border: #e8e5de;
+}
+
+@media (prefers-color-scheme: dark) {
+    .theme-ranker {
+        --bg: #141b1f;
+        --surface: #1b2328;
+        --heading: #f1efe9;
+        --accent: #7fb3cc;
+        --border: #2a343a;
+    }
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.app-header .app-icon {
+    flex: none;
+    width: 96px;
+    height: 96px;
+}
+
+.lang-switch {
+    margin: 0 0 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+/* Privacy notice rendered from Markdown (ranker/privacy*.md). */
+.notice > h1 {
+    margin: 1.75rem 0 0.35rem;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--heading);
+}
+
+.notice > h1 + p {
+    margin-top: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.notice > h2 {
+    margin-top: 2.25rem;
+}
