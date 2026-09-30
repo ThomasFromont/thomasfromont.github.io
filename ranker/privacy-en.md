@@ -35,7 +35,7 @@ A Ranker's content is visible to all its members. Anyone who has its invite code
 
 ## How Ranker is organised
 
-Ranker is **peer-managed**. A Ranker belongs to the group that plays in it, not to a company. The person who creates a Ranker can rename it, add players, and delete it; anyone who joins can record results and leave. There is no account, no login, and no central profile that follows you between groups.
+Ranker is **peer-managed**. A Ranker belongs to the group that plays in it, not to a company. The person who creates a Ranker can rename it, add players, and delete it. If they leave the Ranker, this role passes automatically to the longest-standing member. Anyone who joins can record results and leave. There is no account, no login, and no central profile that follows you between groups.
 
 ## Leaving and deleting
 

@@ -35,7 +35,7 @@ Le contenu d'un Ranker est visible par tous ses membres. Toute personne qui a so
 
 ## Comment Ranker est organisé
 
-Ranker est **géré entre pairs**. Un Ranker appartient au groupe qui y joue, pas à une entreprise. La personne qui crée un Ranker peut le renommer, ajouter des joueurs et le supprimer ; toute personne qui le rejoint peut enregistrer des résultats et le quitter. Il n'y a ni compte, ni connexion, ni profil central qui te suit d'un groupe à l'autre.
+Ranker est **géré entre pairs**. Un Ranker appartient au groupe qui y joue, pas à une entreprise. La personne qui crée un Ranker peut le renommer, ajouter des joueurs et le supprimer. Si elle quitte le Ranker, ce rôle passe automatiquement au membre présent depuis le plus longtemps. Toute personne qui le rejoint peut enregistrer des résultats et le quitter. Il n'y a ni compte, ni connexion, ni profil central qui te suit d'un groupe à l'autre.
 
 ## Quitter et supprimer
 
