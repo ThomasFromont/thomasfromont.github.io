@@ -12,7 +12,7 @@ alternate_url: /ranker/privacy-en
 ---
 # Politique de confidentialité
 
-_Dernière mise à jour : 30 septembre 2026_
+_Dernière mise à jour : 2 octobre 2026_
 
 Ranker est développé par une seule personne, pour celles et ceux qui jouent ensemble. Cette notice explique ce que l'application collecte, ce qu'elle ne collecte pas, combien de temps les données sont conservées, et ce qu'il advient de tes données quand tu quittes ou supprimes un Ranker.
 
@@ -25,7 +25,7 @@ Ranker ne collecte que ce qu'il faut pour faire fonctionner tes Rankers et corri
 - **Le contenu de tes Rankers** — le nom et l'emoji du Ranker, les noms des joueurs (y compris ceux que le créateur saisit pour d'autres personnes), les matchs, leurs résultats et les scores tels qu'ils ont été écrits, ainsi que l'historique des modifications (qui a ajouté, annulé ou restauré un match).
 - **Des rapports de plantage** — si l'application plante, un rapport technique (modèle de l'appareil, version du système, version de l'application, endroit du code où le plantage s'est produit, et un identifiant d'installation aléatoire) est envoyé à Firebase Crashlytics, un service de Google, pour que le bug puisse être corrigé. À chaque ouverture de l'application, Crashlytics enregistre aussi un bref signal de session avec les mêmes détails techniques, afin de mesurer la fréquence des plantages. Ni l'un ni l'autre ne contient jamais ton nom, tes matchs ou tes scores.
 
-Le nom affiché, l'identifiant d'appareil et le contenu de tes Rankers sont rattachés à cet identifiant aléatoire, jamais à ton identité réelle : il n'y a ni compte, ni e-mail, ni numéro de téléphone. Ton adresse IP sert seulement, brièvement et en mémoire, à limiter les abus (trop de requêtes en une minute) ; notre serveur ne l'enregistre pas.
+Le nom affiché, l'identifiant d'appareil et le contenu de tes Rankers sont rattachés à cet identifiant aléatoire, jamais à ton identité réelle : il n'y a ni compte, ni e-mail, ni numéro de téléphone. Le serveur de Ranker n'utilise ton adresse IP que brièvement, en mémoire, pour limiter les abus (trop de requêtes en une minute), et ne l'enregistre pas. Notre hébergeur, Fly.io, peut la conserver pendant une durée limitée dans ses journaux réseau, pour la sécurité et l'exploitation du service.
 
 C'est toute la liste. Ranker ne collecte **pas** ton adresse e-mail, ton numéro de téléphone, tes contacts, ta position, tes photos, ni de données biométriques. Il n'y a aucun identifiant publicitaire, aucune mesure d'audience, et aucun pistage — ni entre applications, ni sur le web, nulle part.
 
@@ -41,8 +41,11 @@ Ranker est **géré entre pairs**. Un Ranker appartient au groupe qui y joue, pa
 
 - **Tout membre peut quitter un Ranker.** Quand tu pars, tes résultats passés restent dans l'historique de ce Ranker, avec ton nom affiché — les matchs que tu as joués et les points que tu as gagnés font toujours partie du classement, afin que celui de tes adversaires reste juste.
 - **Le créateur peut supprimer un Ranker.** La suppression retire le Ranker et tous ses matchs, pour tout le monde. C'est irréversible.
+- **Tu peux faire effacer tes données.** Écris à **support@icecode.fr** en indiquant le nom du ou des Rankers et ton nom affiché ; nous les effaçons sous 30 jours. Les copies dans les sauvegardes chiffrées disparaissent elles aussi sous 30 jours, comme expliqué plus bas.
 
 ## Durée de conservation
+
+Le serveur de Ranker est hébergé chez Fly.io, à Paris (France) ; ses sauvegardes chiffrées sont stockées chez Tigris, le partenaire de stockage de Fly.io.
 
 - **Le contenu d'un Ranker** est conservé tant que le Ranker existe. Quand il est supprimé, toutes ses données sont retirées immédiatement de nos systèmes actifs ; des sauvegardes chiffrées peuvent en conserver des copies pendant 30 jours au maximum avant d'être définitivement écrasées.
 - **L'identifiant d'appareil** est conservé tant que tu utilises Ranker. Tu peux demander son effacement en nous écrivant.
@@ -55,3 +58,5 @@ Les étiquettes de collecte de données de Ranker sur l'App Store et Google Play
 ## Contact
 
 Une question, ou une demande d'accès ou d'effacement de tes données ? Écris à **support@icecode.fr**.
+
+Utiliser Ranker, c'est aussi accepter ses conditions d'utilisation : https://www.icecode.fr/ranker/terms
