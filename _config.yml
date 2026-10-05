@@ -8,3 +8,4 @@ exclude:
   - DESIGN.md
   - README.md
   - vendor
+  - CLAUDE.md
