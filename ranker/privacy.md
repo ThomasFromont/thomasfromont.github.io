@@ -4,6 +4,8 @@
 # To update: paste the new notice below the front matter. Keep this URL stable:
 # App Store Connect and the Play Console point to https://www.icecode.fr/ranker/privacy
 layout: ranker-privacy
+og_image: ranker
+favicon: /ranker/icon.svg
 lang: fr
 title: Politique de confidentialité — Ranker
 description: Politique de confidentialité de l'application Ranker, publiée par Thomas Fromont (IceCode).

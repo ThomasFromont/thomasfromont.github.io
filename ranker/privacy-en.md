@@ -4,6 +4,8 @@
 # To update: paste the new notice below the front matter. Keep this URL stable:
 # App Store Connect and the Play Console point to https://www.icecode.fr/ranker/privacy-en
 layout: ranker-privacy
+og_image: ranker
+favicon: /ranker/icon.svg
 lang: en
 title: Privacy notice — Ranker
 description: Privacy notice for the Ranker app, published by Thomas Fromont (IceCode).

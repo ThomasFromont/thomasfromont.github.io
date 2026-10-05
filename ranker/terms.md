@@ -2,6 +2,8 @@
 # Ranker terms of use (French). Keep this URL stable: the app links to
 # https://www.icecode.fr/ranker/terms (French) and /ranker/terms-en (every other language).
 layout: ranker-privacy
+og_image: ranker
+favicon: /ranker/icon.svg
 lang: fr
 title: Conditions d'utilisation — Ranker
 description: Conditions d'utilisation de l'application Ranker, publiée par Thomas Fromont (IceCode).
