@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{%- assign fr = false -%}
+{%- if page.lang == "fr" -%}{%- assign fr = true -%}{%- endif %}
+<div class="wrap">
+  <article class="doc page-head-doc" style="padding-block: clamp(2.5rem, 6vw, 4rem) 0;">
+    {{ content }}
+  </article>
+</div>

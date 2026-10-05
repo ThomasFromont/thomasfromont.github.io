@@ -1,331 +1,1063 @@
+/* ==========================================================================
+   IceCode design system — "Glace & granit"
+   Ice white, granite text, deep glacier blue for action, copper for rare
+   details. Light first; the dark theme is a fjord at night.
+   Documented in DESIGN.md and shown live on /design-system/.
+   Kept at /style.css because every page, old and new, links this path.
+   ========================================================================== */
+
+/* Fonts are self-hosted (no request to Google from visitors' browsers).
+   Both families are under the SIL Open Font License. */
+@font-face {
+    font-family: "Schibsted Grotesk";
+    font-style: normal;
+    font-weight: 500 800;
+    font-display: swap;
+    src: url("/assets/fonts/schibsted-grotesk-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Schibsted Grotesk";
+    font-style: normal;
+    font-weight: 500 800;
+    font-display: swap;
+    src: url("/assets/fonts/schibsted-grotesk-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Hanken Grotesk";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("/assets/fonts/hanken-grotesk-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Hanken Grotesk";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("/assets/fonts/hanken-grotesk-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
 :root {
-    --bg: #f4f5f7;
-    --surface: #ffffff;
-    --text: #24292f;
-    --text-muted: #5b6570;
-    --heading: #14181c;
-    --accent: #b8622a;
-    --border: #e3e6ea;
-    --shadow: 0 1px 3px rgba(16, 22, 26, 0.06), 0 8px 24px rgba(16, 22, 26, 0.06);
+    /* Colour — pick by role, never by hue */
+    --ice: #F4F7F8;            /* page background */
+    --snow: #FFFFFF;           /* raised surfaces */
+    --frost: #EAF1F4;          /* tinted sections, sunken zones */
+    --frost-strong: #DDEBF2;   /* chips, selected states */
+    --line: #D9E2E6;           /* 1px borders and rules */
+    --granite: #1F2A30;        /* body text — 13.4:1 on ice */
+    --granite-deep: #141C21;   /* headings */
+    --stone: #5A6972;          /* secondary text — 5.3:1 on ice */
+    --glacier: #2A6888;        /* action, links — 5.6:1 on ice */
+    --glacier-deep: #215572;   /* hover / pressed */
+    --on-glacier: #FFFFFF;
+    --copper: #B8703F;         /* rare detail — UI only, never body text */
+    --bezel: #141C21;          /* phone frame around screenshots */
+
+    /* Fjord illustration */
+    --ridge-far: #DCE6EB;
+    --ridge-mid: #B9C9D1;
+    --ridge-near: #6F818B;
+    --sky-top: #F4F7F8;
+    --sky-low: #E4EEF3;
+    --snowcap: #FFFFFF;
+
+    --shadow-sm: 0 1px 2px rgba(20, 28, 33, 0.06);
+    --shadow-md: 0 1px 3px rgba(20, 28, 33, 0.06), 0 12px 32px rgba(20, 28, 33, 0.08);
+
+    /* Type */
+    --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;
+    --step-1: 1.25rem;
+    --step-2: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem);
+    --step-3: clamp(1.875rem, 1.4rem + 2.2vw, 2.75rem);
+    --step-4: clamp(2.5rem, 1.6rem + 4.2vw, 4.25rem);
+
+    /* Space & shape */
+    --gutter: clamp(1rem, 4vw, 2rem);
+    --section: clamp(4rem, 9vw, 7.5rem);
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 18px;
+    --page: 72rem;
+    --measure: 40rem;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #14171a;
-        --surface: #1c2024;
-        --text: #c9d1d9;
-        --text-muted: #8b949e;
-        --heading: #f0f3f6;
-        --accent: #e08a4e;
-        --border: #2c3238;
-        --shadow: none;
+        --ice: #10181D;
+        --snow: #18232A;
+        --frost: #141E24;
+        --frost-strong: #1B3240;
+        --line: #26343C;
+        --granite: #E6ECEF;
+        --granite-deep: #F5F8F9;
+        --stone: #93A3AC;
+        --glacier: #8CC0DA;
+        --glacier-deep: #B0D5E7;
+        --on-glacier: #0D1B22;
+        --copper: #D88B5A;
+        --bezel: #2B3A43;
+
+        --ridge-far: #24333C;
+        --ridge-mid: #1A262D;
+        --ridge-near: #0E151A;
+        --sky-top: #10181D;
+        --sky-low: #182630;
+        --snowcap: #9FB4C0;
+
+        --shadow-sm: none;
+        --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+        color-scheme: dark;
     }
 }
 
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.65;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg);
-    color: var(--text);
+html {
     -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
-.container {
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem 3rem;
-    background: var(--surface);
-    box-shadow: var(--shadow);
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-@media (min-width: 48rem) {
-    .container {
-        margin: 2.5rem auto;
-        padding: 3rem 3.5rem 3.5rem;
-        border-radius: 12px;
-    }
-}
-
-header {
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-}
-
-header h1 {
-    margin: 0 0 0.35rem;
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: var(--heading);
-}
-
-header .effective-date {
+body {
     margin: 0;
-    font-size: 0.875rem;
-    color: var(--text-muted);
+    background: var(--ice);
+    color: var(--granite);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
 }
 
-/* Identity block — names the app and the developer exactly as they appear on the
-   Google Play and App Store listings. Play policy review rejects a privacy policy
-   that does not identify both. */
-.identity {
-    margin: 1.75rem 0 0;
-    padding: 1.25rem 1.5rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
+img,
+svg {
+    max-width: 100%;
 }
 
-.identity p {
-    margin: 0 0 0.75rem;
-}
-
-.identity p:last-child {
-    margin-bottom: 0;
-}
-
-.identity dl {
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--granite-deep);
+    line-height: 1.12;
+    text-wrap: balance;
     margin: 0;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 0.35rem 1.25rem;
-    font-size: 0.9375rem;
 }
 
-.identity dt {
-    color: var(--text-muted);
-}
+h1 { font-size: var(--step-4); font-weight: 800; letter-spacing: -0.035em; }
+h2 { font-size: var(--step-3); font-weight: 800; letter-spacing: -0.03em; }
+h3 { font-size: var(--step-1); font-weight: 700; letter-spacing: -0.015em; }
+h4 { font-size: var(--step-0); font-weight: 700; letter-spacing: -0.01em; }
 
-.identity dd {
-    margin: 0;
-    color: var(--text);
-}
-
-@media (max-width: 30rem) {
-    .identity dl {
-        grid-template-columns: 1fr;
-        gap: 0 0;
-    }
-
-    .identity dd {
-        margin-bottom: 0.6rem;
-    }
-}
-
-main section {
-    margin: 2.25rem 0 0;
-}
-
-/* One .app-entry per published app. Everything that varies between apps lives
-   here — permissions, what stays on device, what is collected. The numbered
-   sections below apply to every app alike. To cover a new app, copy one entry
-   and add it to the list in the .identity block at the top of the page. */
-.app-entry {
-    margin: 1.25rem 0;
-    padding: 1.375rem 1.5rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-}
-
-.app-entry h3 {
-    margin-top: 0;
-    font-size: 1.0625rem;
-}
-
-.app-entry h3 .alias {
-    font-weight: 400;
-    color: var(--text-muted);
-}
-
-.app-entry .meta {
-    margin: 0 0 0.85rem;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
-.app-entry h4 {
-    font-size: 0.9375rem;
-    color: var(--heading);
-    margin: 1rem 0 0.3rem;
-}
-
-.app-entry ul {
-    margin: 0.3rem 0;
-}
-
-.app-entry li {
-    margin: 0.3rem 0;
-}
-
-main h2 {
-    font-size: 1.1875rem;
-    line-height: 1.3;
-    color: var(--heading);
-    letter-spacing: -0.01em;
-    margin: 0 0 0.75rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
-}
-
-main h3 {
-    font-size: 1rem;
-    color: var(--heading);
-    margin: 1.25rem 0 0.4rem;
-}
-
-main p,
-main ul {
-    margin: 0.75rem 0;
-}
-
-main ul {
-    padding-left: 1.25rem;
-}
-
-main li {
-    margin: 0.4rem 0;
-}
+p { margin: 0; }
 
 a {
-    color: var(--accent);
+    color: var(--glacier);
     text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
 }
 
 a:hover {
+    color: var(--glacier-deep);
     text-decoration-thickness: 2px;
 }
 
-code {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 0.9em;
-    padding: 0.1em 0.35em;
-    background: var(--bg);
-    border: 1px solid var(--border);
+:focus-visible {
+    outline: 2px solid var(--glacier);
+    outline-offset: 3px;
     border-radius: 4px;
 }
 
-footer {
-    margin-top: 2.75rem;
-    padding-top: 1.25rem;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
+code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    padding: 0.1em 0.35em;
+    background: var(--frost);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow-wrap: anywhere;
 }
 
-footer p {
-    margin: 0.25rem 0;
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    padding: 0.5rem 0.875rem;
+    background: var(--glacier);
+    color: var(--on-glacier);
+    border-radius: var(--radius-sm);
+    z-index: 100;
 }
 
-/* Home page */
-.home {
-    text-align: center;
+.skip-link:focus { top: 1rem; }
+
+.wrap {
+    width: 100%;
+    max-width: var(--page);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
 }
 
-.home h1 {
-    font-size: clamp(2rem, 6vw, 2.75rem);
-    letter-spacing: -0.02em;
-    color: var(--heading);
-    margin: 0 0 0.5rem;
+/* --------------------------------------------------------------------------
+   3. Small parts
+   -------------------------------------------------------------------------- */
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--glacier);
 }
 
-.home .tagline {
-    font-size: 1.0625rem;
-    color: var(--text-muted);
-    margin: 0 0 2.25rem;
+.lede {
+    font-size: var(--step-1);
+    line-height: 1.55;
+    color: var(--stone);
+    max-width: var(--measure);
 }
 
-.app-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2.25rem;
-    text-align: left;
+.muted { color: var(--stone); }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.app-list li {
-    padding: 1.125rem 1.375rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    margin-bottom: 0.75rem;
+.btn-primary {
+    background: var(--glacier);
+    color: var(--on-glacier);
 }
 
-.app-list strong {
+.btn-primary:hover {
+    background: var(--glacier-deep);
+    color: var(--on-glacier);
+}
+
+.btn-ghost {
+    border-color: var(--line);
+    color: var(--granite-deep);
+    background: var(--snow);
+}
+
+.btn-ghost:hover {
+    border-color: var(--glacier);
+    color: var(--glacier);
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 99px;
+    background: var(--frost-strong);
+    color: var(--granite-deep);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.pill-dot::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--copper);
+}
+
+.app-icon {
     display: block;
-    color: var(--heading);
-    font-size: 1.0625rem;
+    border-radius: 22.5%;
+    box-shadow: var(--shadow-sm), 0 0 0 1px var(--line);
+    flex: none;
 }
 
-.app-list span {
-    color: var(--text-muted);
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.store-badges a {
+    display: block;
+    line-height: 0;
+    border-radius: 9px;
+}
+
+.store-badges img {
+    height: 48px;
+    width: auto;
+}
+
+/* Ticked feature list — the tick is a small glacier chevron, echo of the logo */
+.ticks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+}
+
+.ticks li {
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.ticks li::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.6em;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 2px solid var(--glacier);
+    border-bottom: 2px solid var(--glacier);
+    transform: rotate(-45deg);
+}
+
+.ticks strong { color: var(--granite-deep); font-weight: 600; }
+
+/* Phone screenshot frame */
+.phone {
+    margin: 0;
+    border-radius: 2rem;
+    padding: 0.4rem;
+    background: var(--bezel);
+    box-shadow: var(--shadow-md);
+    flex: none;
+}
+
+.phone img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.65rem;
+}
+
+.phones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    align-items: start;
+}
+
+.phones .phone:nth-child(2) { transform: translateY(-1.5rem); }
+
+@media (max-width: 34rem) {
+    .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .phones .phone:nth-child(3) { display: none; }
+    .phones .phone:nth-child(2) { transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   4. Site header & footer
+   -------------------------------------------------------------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--ice) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+/* On the home page the header floats over the hero sky */
+.home .site-header {
+    border-bottom-color: transparent;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 4rem;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-right: auto;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+    color: var(--granite-deep);
+    text-decoration: none;
+}
+
+.brand:hover { color: var(--granite-deep); }
+
+.brand svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--glacier);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2.5vw, 1.75rem);
     font-size: 0.9375rem;
 }
 
-/* Ranker pages — Skärgård palette. Only the colour tokens change; layout and
-   components are the shared ones above. */
-.theme-ranker {
-    --bg: #f1efe9;
-    --surface: #ffffff;
-    --heading: #141b1f;
-    --accent: #2e7294;
-    --border: #e8e5de;
+.site-nav a {
+    color: var(--stone);
+    text-decoration: none;
+    font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-    .theme-ranker {
-        --bg: #141b1f;
-        --surface: #1b2328;
-        --heading: #f1efe9;
-        --accent: #7fb3cc;
-        --border: #2a343a;
-    }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    color: var(--granite-deep);
 }
 
-.app-header {
+.lang-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+}
+
+@media (max-width: 40rem) {
+    .site-nav .nav-optional { display: none; }
+}
+
+.site-footer {
+    margin-top: var(--section);
+    background: var(--frost);
+    border-top: 1px solid var(--line);
+    padding-block: 3.5rem 2.5rem;
+    font-size: 0.9375rem;
+    color: var(--stone);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 52rem) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid > :first-child { grid-column: 1 / -1; }
+}
+
+.footer-grid h2 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.85rem;
+}
+
+.footer-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.footer-grid a {
+    color: var(--granite);
+    text-decoration: none;
+}
+
+.footer-grid a:hover { color: var(--glacier); text-decoration: underline; }
+
+.footer-company {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 24rem;
+}
+
+.footer-company .brand { font-size: 1.125rem; }
+
+.footer-legal {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Sections
+   -------------------------------------------------------------------------- */
+.section {
+    padding-block: var(--section) 0;
+}
+
+.section-head {
+    display: grid;
+    gap: 0.9rem;
+    max-width: 44rem;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(var(--sky-top), var(--sky-low));
+}
+
+.hero .wrap {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1.5rem;
+    padding-block: clamp(3.5rem, 9vw, 7rem) 0;
+}
+
+.hero .wrap.hero-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 2rem 4rem;
+}
+
+.hero-copy { display: grid; gap: 1.5rem; }
+
+.hero h1 { max-width: 15ch; }
+
+/* Small "now shipping" card beside the hero copy */
+.shelf {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    background: color-mix(in srgb, var(--snow) 80%, transparent);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.shelf a {
     display: flex;
     align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--granite);
+}
+
+.shelf a:hover { background: var(--frost); color: var(--granite); }
+
+.shelf .app-icon { width: 3.25rem; height: 3.25rem; }
+
+.shelf strong { display: block; color: var(--granite-deep); font-family: var(--font-display); font-size: 1.0625rem; }
+
+.shelf div span { font-size: 0.875rem; color: var(--stone); }
+
+.shelf .pill { margin-left: auto; }
+
+@media (max-width: 54rem) {
+    .hero .wrap.hero-grid { grid-template-columns: 1fr; }
+}
+
+.hero .lede { max-width: 38rem; }
+
+.fjord {
+    display: block;
+    width: 100%;
+    height: clamp(7rem, 18vw, 15rem);
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+.fjord .far { fill: var(--ridge-far); }
+.fjord .mid { fill: var(--ridge-mid); }
+.fjord .near { fill: var(--ridge-near); }
+.fjord .snow { fill: var(--snowcap); }
+.fjord .water { fill: var(--ice); }
+
+/* Facts strip, sits on the water line under the hero */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-block: 1px solid var(--line);
+}
+
+.facts div {
+    padding: 1.25rem 1rem 1.25rem 0;
+    display: grid;
+    gap: 0.15rem;
+}
+
+.facts div + div {
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--line);
+}
+
+.facts strong {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--granite-deep);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.facts span {
+    font-size: 0.875rem;
+    color: var(--stone);
+}
+
+@media (max-width: 44rem) {
+    .facts { grid-template-columns: 1fr 1fr; }
+    .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .facts div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+}
+
+/* App showcase on the home page */
+.app-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.app-showcase + .app-showcase { border-top: 1px solid var(--line); }
+
+.app-showcase.flip .app-copy { order: 2; }
+
+@media (max-width: 54rem) {
+    .app-showcase { grid-template-columns: 1fr; }
+    .app-showcase.flip .app-copy { order: 0; }
+}
+
+.app-copy {
+    display: grid;
     gap: 1.25rem;
+    align-content: start;
 }
 
-.app-header .app-icon {
-    flex: none;
-    width: 96px;
-    height: 96px;
+.app-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.lang-switch {
-    margin: 0 0 1rem;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    text-align: right;
+.app-title .app-icon { width: 4rem; height: 4rem; }
+
+.app-title p { color: var(--stone); font-size: 0.9375rem; }
+
+.text-link {
+    font-weight: 600;
+    text-decoration: none;
 }
 
-/* Privacy notice rendered from Markdown (ranker/privacy*.md). */
-.notice > h1 {
-    margin: 1.75rem 0 0.35rem;
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
-    line-height: 1.2;
+.text-link::after { content: " →"; }
+
+.text-link:hover { text-decoration: underline; }
+
+/* Principles */
+.principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 54rem) {
+    .principles { grid-template-columns: 1fr; }
+}
+
+.principle {
+    padding: 1.75rem;
+    background: var(--snow);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 0.6rem;
+    align-content: start;
+}
+
+.principle .mark {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--glacier);
+    margin-bottom: 0.4rem;
+}
+
+.principle p { color: var(--stone); font-size: 0.96875rem; }
+
+/* Studio band */
+.studio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+    margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.studio .prose-lite { display: grid; gap: 1rem; color: var(--granite); }
+
+@media (max-width: 54rem) {
+    .studio { grid-template-columns: 1fr; }
+}
+
+/* Contact band */
+.contact-band {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: var(--snow);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+}
+
+.contact-band > div { display: grid; gap: 0.85rem; }
+
+.contact-band .email {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-2);
     letter-spacing: -0.02em;
-    color: var(--heading);
+    text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
-.notice > h1 + p {
-    margin-top: 0;
+@media (max-width: 48rem) {
+    .contact-band { grid-template-columns: 1fr; }
+}
+
+/* Company identity card (legal facts as a definition list) */
+.identity {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--frost);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.identity dl,
+dl.facts-list {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.45rem 1.5rem;
+    font-size: 0.9375rem;
+}
+
+.identity dt,
+dl.facts-list dt { color: var(--stone); }
+
+.identity dd,
+dl.facts-list dd { margin: 0; color: var(--granite); }
+
+.identity p { margin: 0 0 0.85rem; }
+
+.identity p:last-child { margin-bottom: 0; }
+
+@media (max-width: 30rem) {
+    .identity dl,
+    dl.facts-list { grid-template-columns: 1fr; gap: 0; }
+    .identity dd,
+    dl.facts-list dd { margin-bottom: 0.6rem; }
+}
+
+/* --------------------------------------------------------------------------
+   6. Inner pages
+   -------------------------------------------------------------------------- */
+.page-head {
+    padding-block: clamp(3rem, 7vw, 5rem) clamp(2rem, 4vw, 3rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.page-head h1 { font-size: var(--step-3); max-width: 22ch; }
+
+/* App page hero */
+.app-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.app-hero .app-copy h1 { font-size: var(--step-4); }
+
+.app-hero .app-icon { width: 5.5rem; height: 5.5rem; }
+
+@media (max-width: 54rem) {
+    .app-hero { grid-template-columns: 1fr; }
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 2.5rem;
+}
+
+@media (max-width: 54rem) {
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 34rem) {
+    .feature-grid { grid-template-columns: 1fr; }
+}
+
+.feature {
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+    padding-top: 1.25rem;
+    border-top: 2px solid var(--line);
+}
+
+.feature p { color: var(--stone); font-size: 0.96875rem; }
+
+.split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 4rem);
+    align-items: start;
+}
+
+@media (max-width: 48rem) {
+    .split { grid-template-columns: 1fr; }
+}
+
+.panel {
+    padding: 1.75rem;
+    background: var(--snow);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+}
+
+.uses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.uses li {
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    background: var(--snow);
+    font-size: 0.9375rem;
+}
+
+/* FAQ (support page) */
+.faq {
+    display: grid;
+    border-top: 1px solid var(--line);
+}
+
+.faq details {
+    border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 2.5rem 1.1rem 0;
+    position: relative;
+    font-weight: 600;
+    color: var(--granite-deep);
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+    content: "";
+    position: absolute;
+    right: 0.5rem;
+    top: 1.45rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid var(--stone);
+    border-bottom: 2px solid var(--stone);
+    transform: rotate(45deg);
+    transition: transform 0.15s ease;
+}
+
+.faq details[open] summary::after { transform: rotate(-135deg); top: 1.7rem; }
+
+.faq details > div {
+    padding: 0 0 1.25rem;
+    color: var(--granite);
+    max-width: var(--measure);
+    display: grid;
+    gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Long-form documents (privacy, terms, legal notice)
+   -------------------------------------------------------------------------- */
+.doc {
+    max-width: 46rem;
+    margin-inline: auto;
+}
+
+.doc .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    align-items: baseline;
     font-size: 0.875rem;
-    color: var(--text-muted);
+    color: var(--stone);
+    margin-bottom: 1.75rem;
 }
 
-.notice > h2 {
-    margin-top: 2.25rem;
+.prose {
+    line-height: 1.7;
+}
+
+.prose > * + * { margin-top: 1rem; }
+
+.prose h1 {
+    font-size: var(--step-3);
+    margin-top: 2.5rem;
+}
+
+.prose h1 + p em,
+.prose .effective-date { color: var(--stone); font-size: 0.9375rem; }
+
+.prose h2 {
+    font-size: var(--step-2);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.prose h3 {
+    margin-top: 2rem;
+}
+
+.prose h4 {
+    margin-top: 1.25rem;
+}
+
+.prose ul,
+.prose ol { padding-left: 1.25rem; }
+
+.prose li + li { margin-top: 0.4rem; }
+
+.prose section > * + * { margin-top: 1rem; }
+
+.prose section h2 { margin-top: 3rem; }
+
+/* App entry inside the privacy policy */
+.app-entry {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--snow);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.app-entry > * + * { margin-top: 0.75rem; }
+
+.app-entry h3 { margin-top: 0; }
+
+.app-entry h3 .alias { font-weight: 500; color: var(--stone); }
+
+.app-entry .meta { font-size: 0.875rem; color: var(--stone); }
+
+/* --------------------------------------------------------------------------
+   8. Per-app accents — decoration only (icon halo, tags); text stays on tokens
+   -------------------------------------------------------------------------- */
+.app-my-caps { --app: #DE8D0A; }
+.app-ranker { --app: #2E7294; }
+
+.app-halo {
+    position: relative;
+}
+
+.app-halo::before {
+    content: "";
+    position: absolute;
+    inset: 8% 4% 0;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--app, var(--glacier)) 22%, transparent), transparent);
+    z-index: -1;
+}
+
+.app-halo { isolation: isolate; }
+
+/* --------------------------------------------------------------------------
+   9. Utilities
+   -------------------------------------------------------------------------- */
+.stack { display: grid; gap: 1rem; }
+.stack-lg { display: grid; gap: 2rem; }
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Header of a hand-written document page (privacy policy) */
+.doc-header {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.doc-header h1 { font-size: var(--step-3); }
+
+.effective-date {
+    color: var(--stone);
+    font-size: 0.9375rem;
 }

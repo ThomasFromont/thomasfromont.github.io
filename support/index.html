@@ -1,0 +1,103 @@
+---
+layout: default
+lang: en
+title: Support — IceCode
+description: Help and frequently asked questions for My Caps and Ranker, and how to contact IceCode.
+alternate_lang: fr
+alternate_url: /fr/support/
+nav: support
+---
+{%- assign c = site.data.company -%}
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Support</p>
+    <h1>How can we help?</h1>
+    <p class="lede">
+      Find quick answers below. If your question is not there, write to
+      <a href="mailto:{{ c.email }}">{{ c.email }}</a>. We read every message and reply in
+      English or French, usually within a few days.
+    </p>
+  </header>
+
+  <div class="stack-lg">
+    <section id="my-caps" class="split" aria-labelledby="faq-my-caps">
+      <div class="app-title">
+        <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="56" height="56" style="width:3.5rem;height:3.5rem">
+        <div>
+          <h2 id="faq-my-caps" style="font-size:var(--step-2)">My Caps</h2>
+          <p><a href="/my-caps/">About the app</a> · <a href="/privacy">Privacy policy</a></p>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>How do I add a cap?</summary>
+          <div><p>Tap the + button on the main screen, then take a photo of the cap or pick one from your photo library. The cap is cut out from its background on your phone. Then link it to its brewery.</p></div>
+        </details>
+        <details>
+          <summary>A brewery is missing or its details are wrong.</summary>
+          <div><p>You can report missing or incorrect brewery information directly from the app. You can also email us the brewery's name, country and website.</p></div>
+        </details>
+        <details>
+          <summary>Where is my collection stored?</summary>
+          <div>
+            <p>On your phone. My Caps has no account and never uploads your photos. Uninstalling the app deletes the collection, so keep your device's backups turned on if you want to be able to restore it.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What is Capsy?</summary>
+          <div><p>Capsy is the name of My Caps in Italian. It is the same app.</p></div>
+        </details>
+        <details>
+          <summary>Why is My Caps rated for adults?</summary>
+          <div><p>The app is about beer and breweries, so the App Store and Google Play rate it for adults.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section id="ranker" class="split" aria-labelledby="faq-ranker">
+      <div class="app-title">
+        <img class="app-icon" src="/ranker/icon.svg" alt="" width="56" height="56" style="width:3.5rem;height:3.5rem">
+        <div>
+          <h2 id="faq-ranker" style="font-size:var(--step-2)">Ranker</h2>
+          <p><a href="/ranker/">About the app</a> · <a href="/ranker/privacy-en">Privacy</a> · <a href="/ranker/terms-en">Terms</a></p>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>When will Ranker be available?</summary>
+          <div><p>Ranker is coming soon to the App Store and Google Play. This page will link to both stores as soon as it is out.</p></div>
+        </details>
+        <details>
+          <summary>How do I join a Ranker?</summary>
+          <div><p>Open the invite link someone shared with you, or enter the Ranker's 7-character code in the app. Then claim your name. No account is needed.</p></div>
+        </details>
+        <details>
+          <summary>What happens if the creator leaves?</summary>
+          <div><p>The creator's role passes automatically to the member who has been in the Ranker the longest.</p></div>
+        </details>
+        <details>
+          <summary>How do I delete a Ranker or my data?</summary>
+          <div>
+            <p>The creator can delete a Ranker from its settings; this removes it and all its games for everyone, and cannot be undone. Any member can leave a Ranker at any time.</p>
+            <p>To have your data erased, email us the name of the Ranker and your display name. We erase it within 30 days.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do I report a Ranker?</summary>
+          <div><p>In the Ranker, open the Settings tab and tap “Report this Ranker”, or email us with the Ranker's name. We review every report.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-band" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Still stuck?</p>
+        <h2 id="contact-title" style="font-size:var(--step-2)">Write to us.</h2>
+        <p class="muted">Tell us which app you use, your phone model and what happened. Screenshots help.</p>
+      </div>
+      <div>
+        <a class="email" href="mailto:{{ c.email }}">{{ c.email }}</a>
+      </div>
+    </section>
+  </div>
+</div>

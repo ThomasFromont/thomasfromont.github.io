@@ -1,0 +1,17 @@
+# Legal identity of the publisher, as registered (source: Registre national des entreprises).
+# Shown in the footer of every page and on the legal notice. Keep in sync with the D-U-N-S
+# record and the Apple Developer / Google Play accounts.
+name: ICECODE
+brand: IceCode
+form_fr: SASU (société par actions simplifiée unipersonnelle)
+form_en: SASU (French simplified joint-stock company with a single shareholder)
+capital: 1 000 €
+capital_en: €1,000
+siren: 919 990 911
+siret: 919 990 911 00019
+rcs: RCS Paris 919 990 911
+vat: FR26 919 990 911
+address: 14 rue Bausset, 75015 Paris, France
+founded: 2022
+director: Thomas Fromont
+email: support@icecode.fr

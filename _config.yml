@@ -1,0 +1,10 @@
+# GitHub Pages builds this site with Jekyll. Keep URLs stable: App Store Connect and
+# the Play Console point to /privacy, /ranker/, /ranker/privacy(-en) and /ranker/terms(-en).
+title: IceCode
+url: https://www.icecode.fr
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - DESIGN.md
+  - README.md
+  - vendor

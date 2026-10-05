@@ -1,0 +1,40 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign c = site.data.company -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-company">
+        <a class="brand" href="{{ t.home }}">{% include logo.svg %}IceCode</a>
+        <p>{{ t.footer_tagline }}</p>
+        <p><a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+      </div>
+      <div>
+        <h2>{{ t.footer_apps }}</h2>
+        <ul>
+          <li><a href="{{ t.my_caps_url }}">My Caps</a></li>
+          <li><a href="{{ t.ranker_url }}">Ranker</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ t.footer_company }}</h2>
+        <ul>
+          <li><a href="{{ t.studio_url }}">{{ t.nav_studio }}</a></li>
+          <li><a href="{{ t.support_url }}">{{ t.support }}</a></li>
+          <li><a href="{{ t.legal_url }}">{{ t.legal_notice }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ t.footer_legal }}</h2>
+        <ul>
+          <li><a href="/privacy">{{ t.privacy }}</a></li>
+          <li><a href="{{ t.ranker_privacy_url }}">{{ t.ranker_privacy }}</a></li>
+          <li><a href="{{ t.ranker_terms_url }}">{{ t.ranker_terms }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>© {{ site.time | date: "%Y" }} {{ c.name }}, SASU {{ t.capital_label }} {% if page.lang == 'fr' %}{{ c.capital }}{% else %}{{ c.capital_en }}{% endif %} · {{ c.rcs }} · {{ c.address }}</p>
+      <p>{{ t.rights }}</p>
+    </div>
+  </div>
+</footer>

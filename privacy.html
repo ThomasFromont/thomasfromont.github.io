@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Apps by Thomas Fromont (IceCode)</title>
-    <meta name="description" content="Privacy Policy covering the mobile applications published by Thomas Fromont (IceCode), including My Caps (Capsy).">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
+---
+# Keep this URL stable: App Store Connect and the Play Console point to https://www.icecode.fr/privacy
+layout: default
+lang: en
+title: Privacy Policy — My Caps (IceCode)
+description: Privacy Policy covering the mobile applications published by Thomas Fromont (IceCode), including My Caps (Capsy).
+---
+<div class="wrap">
+  <article class="doc" style="padding-block: clamp(2.5rem, 6vw, 4rem) 0;">
+        <header class="doc-header">
             <h1>Privacy Policy</h1>
             <p class="effective-date">Effective date: August 5, 2026</p>
         </header>
@@ -19,18 +17,21 @@
              does not clearly identify both the app and the publishing entity. -->
         <div class="identity">
             <p>
-                This Privacy Policy is published by <strong>Thomas Fromont (IceCode)</strong> and
-                covers the following mobile applications:
+                This Privacy Policy is published by <strong>Thomas Fromont (IceCode)</strong>, on behalf
+                of ICECODE SASU, and covers the following mobile applications:
             </p>
             <dl>
                 <dt>My Caps</dt>
                 <dd>
                     published as <strong>Capsy</strong> in Italian —
-                    <code>com.icecode.mycaps</code> — Google Play and the Apple App Store
+                    <code>com.icecode.mycaps</code> (Google Play), <code>com.tfromont.MyCaps</code> (App Store)
                 </dd>
 
                 <dt>Developer</dt>
                 <dd>Thomas Fromont (IceCode)</dd>
+
+                <dt>Company</dt>
+                <dd>{{ site.data.company.name }} SASU, {{ site.data.company.address }} — {{ site.data.company.rcs }}</dd>
 
                 <dt>Contact</dt>
                 <dd><a href="mailto:support@icecode.fr">support@icecode.fr</a></dd>
@@ -46,7 +47,7 @@
             </p>
         </div>
 
-        <main>
+        <div class="prose">
             <section>
                 <h2>1. How this policy is organised</h2>
                 <p>
@@ -71,7 +72,7 @@
                 <div class="app-entry">
                     <h3>My Caps <span class="alias">(Capsy in Italian)</span></h3>
                     <p class="meta">
-                        <code>com.icecode.mycaps</code> · Google Play and the Apple App Store ·
+                        <code>com.icecode.mycaps</code> (Google Play) · <code>com.tfromont.MyCaps</code> (App Store) ·
                         rated 18+
                     </p>
 
@@ -261,12 +262,6 @@
                     <a href="mailto:support@icecode.fr">support@icecode.fr</a>.
                 </p>
             </section>
-        </main>
-
-        <footer>
-            <p>Apps by Thomas Fromont (IceCode) — My Caps (Capsy)</p>
-            <p>© 2026 Thomas Fromont (IceCode). All rights reserved.</p>
-        </footer>
-    </div>
-</body>
-</html>
+        </div>
+  </article>
+</div>

@@ -1,0 +1,175 @@
+---
+layout: default
+lang: fr
+title: IceCode — Studio d'apps indépendant à Paris
+description: IceCode est un studio indépendant à Paris qui conçoit et développe des apps natives pour iPhone et Android, dont My Caps pour les collectionneurs de capsules de bière et Ranker pour les ligues et tournois.
+alternate_lang: en
+alternate_url: /
+body_class: home
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+    <p class="eyebrow">Studio d'apps indépendant · Paris</p>
+    <h1>Des apps utiles, faites avec soin.</h1>
+    <p class="lede">
+      IceCode conçoit et développe des apps natives pour iPhone et Android. Des outils
+      simples et ciblés, qui respectent votre temps et vos données : My Caps pour les
+      collectionneurs de capsules, et Ranker pour les ligues et tournois entre amis.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#apps">Voir nos apps</a>
+      <a class="btn btn-ghost" href="#contact">Nous écrire</a>
+    </div>
+    </div>
+    <nav class="shelf" aria-label="Nos apps">
+      <a href="/fr/my-caps/">
+        <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="52" height="52">
+        <div><strong>My Caps</strong><span>Pour les collectionneurs de capsules</span></div>
+        <span class="pill">iOS · Android</span>
+      </a>
+      <a href="/fr/ranker/">
+        <img class="app-icon" src="/ranker/icon.svg" alt="" width="52" height="52">
+        <div><strong>Ranker</strong><span>Ligues et tournois</span></div>
+        <span class="pill pill-dot">Bientôt</span>
+      </a>
+    </nav>
+  </div>
+  {% include fjord.svg %}
+</section>
+
+<div class="wrap">
+  <div class="facts">
+    <div><strong>iOS &amp; Android</strong><span>Natif sur les deux plateformes</span></div>
+    <div><strong>11</strong><span>Langues par app</span></div>
+    <div><strong>0</strong><span>Publicité dans nos apps</span></div>
+    <div><strong>2022</strong><span>Fondé à Paris</span></div>
+  </div>
+</div>
+
+<section class="section" id="apps" aria-labelledby="apps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Nos apps</p>
+      <h2 id="apps-title">Deux apps, chacune centrée sur une chose bien faite.</h2>
+    </div>
+
+    <article class="app-showcase app-my-caps">
+      <div class="app-copy">
+        <div class="app-title">
+          <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="64" height="64">
+          <div>
+            <h3>My Caps</h3>
+            <p>Collection de capsules · Capsy en italien</p>
+          </div>
+        </div>
+        <p>
+          La façon la plus simple d'organiser et de mettre en valeur une collection de
+          capsules de bière. Photographiez une capsule, reliez-la à sa brasserie : My Caps la
+          place sur la carte et garde votre collection en ordre, quelle que soit sa taille.
+        </p>
+        <ul class="ticks">
+          <li><strong>Ajoutez une capsule en quelques secondes</strong>, avec l'appareil photo ou depuis vos photos. La capsule est détourée sur votre téléphone.</li>
+          <li><strong>Explorez votre collection sur une carte</strong> et voyez où se trouve chaque brasserie.</li>
+          <li><strong>Des statistiques</strong> par capsules, brasseries et pays.</li>
+          <li><strong>Aucun compte.</strong> Votre collection et vos photos restent sur votre appareil.</li>
+        </ul>
+        {% include store-badges.html app="my_caps" %}
+        <p><a class="text-link" href="/fr/my-caps/">En savoir plus sur My Caps</a></p>
+      </div>
+      <div class="phones app-halo">
+        <figure class="phone"><img src="/assets/img/my-caps/fr-1-home.webp" alt="Écran de collection My Caps : 657 capsules, 472 brasseries, 38 pays, classées par pays" width="540" height="1200" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/my-caps/fr-2-map.webp" alt="Carte d'Amérique du Nord avec les capsules placées sur leurs brasseries" width="540" height="1200" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/my-caps/fr-3-brasserie-mira.webp" alt="Page de la Brasserie Mira, France, avec douze capsules colorées" width="540" height="1200" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article class="app-showcase flip app-ranker">
+      <div class="app-copy">
+        <div class="app-title">
+          <img class="app-icon" src="/ranker/icon.svg" alt="" width="64" height="64">
+          <div>
+            <h3>Ranker</h3>
+            <p>Ligues et tournois · <span class="pill pill-dot">Bientôt disponible</span></p>
+          </div>
+        </div>
+        <p>
+          Des ligues toute l'année, des tournois d'un soir. Ranker tient le classement de tous
+          vos matchs : ping-pong au bureau, classement de tennis, fléchettes au bar, pétanque.
+          Personne n'a de compte à créer. Un lien suffit.
+        </p>
+        <ul class="ticks">
+          <li><strong>Des ligues façon Elo</strong>, mises à jour après chaque match, avec la courbe de position de chaque joueur.</li>
+          <li><strong>Tableaux et phases de poules</strong> pour un tournoi le temps d'une soirée.</li>
+          <li><strong>Personne n'a de compte</strong>, pas même l'organisateur. Partagez un lien d'invitation ou un code à 7 caractères.</li>
+          <li><strong>Fonctionne hors connexion.</strong> Les résultats se synchronisent ensuite.</li>
+        </ul>
+        <p class="muted">Bientôt sur l'App Store et Google Play.</p>
+        <p><a class="text-link" href="/fr/ranker/">En savoir plus sur Ranker</a></p>
+      </div>
+      <div class="phones app-halo">
+        <figure class="phone"><img src="/assets/img/ranker/fr-01_league.webp" alt="Classement d'une ligue de ping-pong dans Ranker" width="540" height="1174" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/ranker/fr-02_bracket.webp" alt="Tableau d'un tournoi de foot, demi-finales et finale" width="540" height="1174" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/ranker/fr-05_history.webp" alt="Historique de position d'un joueur dans une ligue Ranker" width="540" height="1174" loading="lazy"></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="studio" aria-labelledby="studio-title">
+  <div class="wrap">
+    <div class="studio">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">Le studio</p>
+        <h2 id="studio-title">Petit, et c'est voulu.</h2>
+      </div>
+      <div class="prose-lite">
+        <p class="lede" style="color:var(--granite)">
+          IceCode est la société de Thomas Fromont, développeur mobile à Paris. Fondée en
+          2022, elle conçoit, développe et publie ses propres apps.
+        </p>
+        <p>
+          Tout est fait en interne, du premier croquis à la fiche sur les stores, en passant
+          par les traductions et le support. Une seule personne connaît chaque ligne de code :
+          les bugs sont corrigés vite, et vos questions arrivent directement à la personne qui
+          peut y répondre.
+        </p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3.5" width="18" height="29" rx="4"/><path d="M15.5 8h5"/><path d="m15 17-3 3 3 3M21 17l3 3-3 3"/></svg>
+        <h3>Natif sur chaque plateforme</h3>
+        <p>SwiftUI sur iPhone, Jetpack Compose sur Android. Chaque app respecte les codes de votre téléphone, parce qu'elle est faite pour lui.</p>
+      </div>
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3.5 6 8v9c0 7.5 5 12.5 12 15.5 7-3 12-8 12-15.5V8Z"/><path d="m13 18 3.5 3.5L23.5 14"/></svg>
+        <h3>Vos données restent les vôtres</h3>
+        <p>Pas de publicité, et nous ne vendons aucune donnée. Chaque app ne collecte que le nécessaire et l'explique simplement dans sa politique de confidentialité.</p>
+      </div>
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 28 13 12l6 9 4-6 9 13Z"/><path d="m13 12 2.5 4.5M23 15l2 3"/></svg>
+        <h3>Faites pour durer</h3>
+        <p>Nous mettons nos apps à jour, corrigeons ce qui casse et les traduisons avec soin. Les deux apps parlent 11 langues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="contact-band">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Une question, une idée ou un bug ?</h2>
+        <p class="muted">Écrivez-nous. Chaque message est lu et traité par la personne qui développe les apps.</p>
+      </div>
+      <div>
+        <a class="email" href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a>
+        <p class="muted">Besoin d'aide avec une app ? Consultez la <a href="/fr/support/">page support</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>

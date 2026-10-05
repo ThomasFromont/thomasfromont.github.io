@@ -1,0 +1,101 @@
+---
+layout: default
+lang: fr
+title: Support — IceCode
+description: Aide et questions fréquentes sur My Caps et Ranker, et comment contacter IceCode.
+alternate_lang: en
+alternate_url: /support/
+nav: support
+---
+{%- assign c = site.data.company -%}
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Support</p>
+    <h1>Comment pouvons-nous vous aider ?</h1>
+    <p class="lede">
+      Vous trouverez ci-dessous les réponses aux questions les plus fréquentes. Sinon,
+      écrivez à <a href="mailto:{{ c.email }}">{{ c.email }}</a>. Nous lisons chaque message
+      et répondons en français ou en anglais, en général sous quelques jours.
+    </p>
+  </header>
+
+  <div class="stack-lg">
+    <section id="my-caps" class="split" aria-labelledby="faq-my-caps">
+      <div class="app-title">
+        <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="56" height="56" style="width:3.5rem;height:3.5rem">
+        <div>
+          <h2 id="faq-my-caps" style="font-size:var(--step-2)">My Caps</h2>
+          <p><a href="/fr/my-caps/">L'app</a> · <a href="/privacy" hreflang="en">Confidentialité</a></p>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Comment ajouter une capsule ?</summary>
+          <div><p>Touchez le bouton + sur l'écran principal, puis photographiez la capsule ou choisissez une photo dans votre bibliothèque. La capsule est détourée sur votre téléphone. Reliez-la ensuite à sa brasserie.</p></div>
+        </details>
+        <details>
+          <summary>Une brasserie manque, ou ses informations sont fausses.</summary>
+          <div><p>Vous pouvez signaler une brasserie manquante ou incorrecte directement depuis l'app. Vous pouvez aussi nous envoyer par e-mail son nom, son pays et son site web.</p></div>
+        </details>
+        <details>
+          <summary>Où est stockée ma collection ?</summary>
+          <div><p>Sur votre téléphone. My Caps n'a pas de compte et n'envoie jamais vos photos. Désinstaller l'app supprime la collection : gardez les sauvegardes de votre appareil activées si vous voulez pouvoir la restaurer.</p></div>
+        </details>
+        <details>
+          <summary>Qu'est-ce que Capsy ?</summary>
+          <div><p>Capsy est le nom de My Caps en italien. C'est la même app.</p></div>
+        </details>
+        <details>
+          <summary>Pourquoi My Caps est-elle réservée aux adultes ?</summary>
+          <div><p>L'app parle de bière et de brasseries : l'App Store et Google Play la classent donc pour un public adulte.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section id="ranker" class="split" aria-labelledby="faq-ranker">
+      <div class="app-title">
+        <img class="app-icon" src="/ranker/icon.svg" alt="" width="56" height="56" style="width:3.5rem;height:3.5rem">
+        <div>
+          <h2 id="faq-ranker" style="font-size:var(--step-2)">Ranker</h2>
+          <p><a href="/fr/ranker/">L'app</a> · <a href="/ranker/privacy">Confidentialité</a> · <a href="/ranker/terms">Conditions</a></p>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Quand Ranker sera-t-il disponible ?</summary>
+          <div><p>Ranker arrive bientôt sur l'App Store et Google Play. Cette page renverra vers les deux stores dès sa sortie.</p></div>
+        </details>
+        <details>
+          <summary>Comment rejoindre un Ranker ?</summary>
+          <div><p>Ouvrez le lien d'invitation qu'on vous a partagé, ou saisissez le code à 7 caractères du Ranker dans l'app. Choisissez ensuite votre nom. Aucun compte n'est nécessaire.</p></div>
+        </details>
+        <details>
+          <summary>Que se passe-t-il si le créateur s'en va ?</summary>
+          <div><p>Son rôle passe automatiquement au membre présent depuis le plus longtemps.</p></div>
+        </details>
+        <details>
+          <summary>Comment supprimer un Ranker ou mes données ?</summary>
+          <div>
+            <p>Le créateur peut supprimer un Ranker depuis ses réglages : le Ranker et tous ses matchs disparaissent pour tout le monde, sans retour possible. Tout membre peut quitter un Ranker à tout moment.</p>
+            <p>Pour faire effacer vos données, envoyez-nous le nom du Ranker et votre nom affiché. Nous les effaçons sous 30 jours.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Comment signaler un Ranker ?</summary>
+          <div><p>Dans le Ranker, ouvrez l'onglet Réglages et touchez « Signaler ce Ranker », ou écrivez-nous en indiquant son nom. Nous examinons chaque signalement.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-band" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Toujours bloqué ?</p>
+        <h2 id="contact-title" style="font-size:var(--step-2)">Écrivez-nous.</h2>
+        <p class="muted">Indiquez l'app concernée, le modèle de votre téléphone et ce qui s'est passé. Une capture d'écran aide beaucoup.</p>
+      </div>
+      <div>
+        <a class="email" href="mailto:{{ c.email }}">{{ c.email }}</a>
+      </div>
+    </section>
+  </div>
+</div>

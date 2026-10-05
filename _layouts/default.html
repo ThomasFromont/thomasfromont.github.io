@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%- assign t = site.data.i18n[page.lang] %}
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F4F7F8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#10181D" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' | replace: '.html', '' }}">
+    {%- if page.alternate_url %}
+    <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url | replace: 'index.html', '' | replace: '.html', '' }}">
+    <link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ site.url }}{{ page.alternate_url }}">
+    {%- endif %}
+    {%- if page.noindex %}
+    <meta name="robots" content="noindex">
+    {%- endif %}
+    <meta property="og:site_name" content="IceCode">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:locale" content="{% if page.lang == 'fr' %}fr_FR{% else %}en_US{% endif %}">
+    <link rel="icon" href="{{ page.favicon | default: '/assets/favicon.svg' }}" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="{{ page.body_class }}">
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+</html>

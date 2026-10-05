@@ -1,40 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IceCode — Apps by Thomas Fromont</title>
-    <meta name="description" content="IceCode is the app studio of Thomas Fromont, maker of My Caps, the beer cap collection app for iOS and Android.">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container home">
-        <h1>IceCode</h1>
-        <p class="tagline">Apps by Thomas Fromont</p>
-
-        <ul class="app-list">
-            <li>
-                <strong>My Caps</strong>
-                <span>
-                    Collect, organise and map your beer caps. Snap a photo, discover the brewery
-                    behind each cap, and watch your collection grow. Available on iOS and Android,
-                    in 11 languages. Published as <em>Capsy</em> in Italian.
-                </span>
-            </li>
-            <li>
-                <strong><a href="ranker/">Ranker</a></strong>
-                <span>
-                    Keep a ranking or run a tournament among friends, a club or colleagues.
-                    ELO-style leagues and brackets, no account needed. Coming to iOS and Android.
-                </span>
-            </li>
-        </ul>
-
-        <footer>
-            <p><a href="privacy.html">Privacy Policy</a></p>
-            <p><a href="mailto:support@icecode.fr">support@icecode.fr</a></p>
-            <p>© 2026 Thomas Fromont (IceCode). All rights reserved.</p>
-        </footer>
+---
+layout: default
+lang: en
+title: IceCode — Independent app studio in Paris
+description: IceCode is an independent studio in Paris that designs and builds native apps for iPhone and Android, including My Caps for beer cap collectors and Ranker for leagues and tournaments.
+alternate_lang: fr
+alternate_url: /fr/
+body_class: home
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+    <p class="eyebrow">Independent app studio · Paris</p>
+    <h1>Useful apps, crafted with care.</h1>
+    <p class="lede">
+      IceCode designs and builds native apps for iPhone and Android. Small, focused tools
+      that respect your time and your data: My Caps for beer cap collectors, and Ranker for
+      leagues and tournaments among friends.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#apps">See our apps</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
-</body>
-</html>
+    </div>
+    <nav class="shelf" aria-label="Our apps">
+      <a href="/my-caps/">
+        <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="52" height="52">
+        <div><strong>My Caps</strong><span>For beer cap collectors</span></div>
+        <span class="pill">iOS · Android</span>
+      </a>
+      <a href="/ranker/">
+        <img class="app-icon" src="/ranker/icon.svg" alt="" width="52" height="52">
+        <div><strong>Ranker</strong><span>Leagues &amp; tournaments</span></div>
+        <span class="pill pill-dot">Soon</span>
+      </a>
+    </nav>
+  </div>
+  {% include fjord.svg %}
+</section>
+
+<div class="wrap">
+  <div class="facts">
+    <div><strong>iOS &amp; Android</strong><span>Native on both platforms</span></div>
+    <div><strong>11</strong><span>Languages per app</span></div>
+    <div><strong>0</strong><span>Ads in our apps</span></div>
+    <div><strong>2022</strong><span>Founded in Paris</span></div>
+  </div>
+</div>
+
+<section class="section" id="apps" aria-labelledby="apps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our apps</p>
+      <h2 id="apps-title">Two apps, each built around one thing done well.</h2>
+    </div>
+
+    <article class="app-showcase app-my-caps">
+      <div class="app-copy">
+        <div class="app-title">
+          <img class="app-icon" src="/assets/img/my-caps/icon.webp" alt="" width="64" height="64">
+          <div>
+            <h3>My Caps</h3>
+            <p>Beer cap collection · Capsy in Italian</p>
+          </div>
+        </div>
+        <p>
+          The easiest way to organise and show off a beer cap collection. Snap a cap, link
+          it to its brewery, and My Caps places it on the map and keeps your collection
+          tidy, however large it grows.
+        </p>
+        <ul class="ticks">
+          <li><strong>Add a cap in seconds</strong> with the camera or from your photos. The cap is cut out from its background on your phone.</li>
+          <li><strong>Explore your collection on a map</strong> and see where every brewery is.</li>
+          <li><strong>Statistics</strong> by caps, breweries and countries.</li>
+          <li><strong>No account.</strong> Your collection and your photos stay on your device.</li>
+        </ul>
+        {% include store-badges.html app="my_caps" %}
+        <p><a class="text-link" href="/my-caps/">More about My Caps</a></p>
+      </div>
+      <div class="phones app-halo">
+        <figure class="phone"><img src="/assets/img/my-caps/en-1-home.webp" alt="My Caps collection screen: 657 caps, 472 breweries, 38 countries, grouped by country" width="540" height="1200" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/my-caps/en-2-map.webp" alt="Map of North America with caps pinned on their breweries" width="540" height="1200" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/my-caps/en-3-brasserie-mira.webp" alt="Brewery page for Brasserie Mira, France, showing twelve colourful caps" width="540" height="1200" loading="lazy"></figure>
+      </div>
+    </article>
+
+    <article class="app-showcase flip app-ranker">
+      <div class="app-copy">
+        <div class="app-title">
+          <img class="app-icon" src="/ranker/icon.svg" alt="" width="64" height="64">
+          <div>
+            <h3>Ranker</h3>
+            <p>Leagues and tournaments · <span class="pill pill-dot">Coming soon</span></p>
+          </div>
+        </div>
+        <p>
+          Season-long leagues and one-night tournaments. Ranker keeps score for any game you
+          play together: office ping-pong, a tennis ladder, darts at the bar, pétanque. Nobody
+          needs an account. Just share a link.
+        </p>
+        <ul class="ticks">
+          <li><strong>Elo-style leagues</strong> that update after every game, with each player's rank over time.</li>
+          <li><strong>Brackets and group stages</strong> for a tournament in one evening.</li>
+          <li><strong>No account for anyone</strong>, not even the organiser. Share an invite link or a 7-character code.</li>
+          <li><strong>Works offline.</strong> Results entered without a connection sync later.</li>
+        </ul>
+        <p class="muted">Coming to the App Store and Google Play.</p>
+        <p><a class="text-link" href="/ranker/">More about Ranker</a></p>
+      </div>
+      <div class="phones app-halo">
+        <figure class="phone"><img src="/assets/img/ranker/en-01_league.webp" alt="Ranker league standings for Office ping-pong, Maya first with 1,560 points" width="540" height="1174" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/ranker/en-02_bracket.webp" alt="Bracket of the Friday soccer cup, semi-finals and final" width="540" height="1174" loading="lazy"></figure>
+        <figure class="phone"><img src="/assets/img/ranker/en-05_history.webp" alt="A player's position history in a Ranker league" width="540" height="1174" loading="lazy"></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="studio" aria-labelledby="studio-title">
+  <div class="wrap">
+    <div class="studio">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">The studio</p>
+        <h2 id="studio-title">Small on purpose.</h2>
+      </div>
+      <div class="prose-lite">
+        <p class="lede" style="color:var(--granite)">
+          IceCode is the company of Thomas Fromont, a mobile developer based in Paris.
+          Founded in 2022, it designs, builds and publishes its own apps.
+        </p>
+        <p>
+          Everything is done in-house, from the first sketch to the store listing, the
+          translations and the support emails. One person knows every line of code, so
+          bugs get fixed quickly and your questions reach the person who can answer them.
+        </p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3.5" width="18" height="29" rx="4"/><path d="M15.5 8h5"/><path d="m15 17-3 3 3 3M21 17l3 3-3 3"/></svg>
+        <h3>Native on each platform</h3>
+        <p>SwiftUI on iPhone, Jetpack Compose on Android. Each app follows the conventions of your phone, because it is built for it.</p>
+      </div>
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3.5 6 8v9c0 7.5 5 12.5 12 15.5 7-3 12-8 12-15.5V8Z"/><path d="m13 18 3.5 3.5L23.5 14"/></svg>
+        <h3>Your data stays yours</h3>
+        <p>No ads, and we never sell data. Each app collects only what it needs and explains it in plain words in its privacy notice.</p>
+      </div>
+      <div class="principle">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 28 13 12l6 9 4-6 9 13Z"/><path d="m13 12 2.5 4.5M23 15l2 3"/></svg>
+        <h3>Made to last</h3>
+        <p>We keep our apps up to date, fix what breaks and translate them carefully. Both apps speak 11 languages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="contact-band">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">A question, an idea or a bug?</h2>
+        <p class="muted">Write to us. Every message is read and answered by the person who builds the apps.</p>
+      </div>
+      <div>
+        <a class="email" href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a>
+        <p class="muted">Looking for help with an app? See the <a href="/support/">support page</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>

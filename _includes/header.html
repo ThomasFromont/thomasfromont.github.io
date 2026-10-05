@@ -1,0 +1,15 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<a class="skip-link" href="#main">{{ t.skip }}</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ t.home }}">{% include logo.svg %}IceCode</a>
+    <nav class="site-nav" aria-label="{% if page.lang == 'fr' %}Navigation principale{% else %}Main{% endif %}">
+      <a href="{{ t.apps_url }}">{{ t.nav_apps }}</a>
+      <a class="nav-optional" href="{{ t.studio_url }}">{{ t.nav_studio }}</a>
+      <a href="{{ t.support_url }}"{% if page.nav == 'support' %} aria-current="page"{% endif %}>{{ t.nav_support }}</a>
+      {%- if page.alternate_url %}
+      <a class="lang-link" href="{{ page.alternate_url }}" hreflang="{{ page.alternate_lang }}" lang="{{ page.alternate_lang }}" title="{{ t.other_lang_title }}">{{ t.other_lang_label }}</a>
+      {%- endif %}
+    </nav>
+  </div>
+</header>

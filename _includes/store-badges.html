@@ -1,0 +1,10 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign app = site.data.apps[include.app] -%}
+<div class="store-badges">
+  {%- if app.app_store %}
+  <a href="{{ app.app_store }}" rel="noopener"><img src="{{ t.app_store_badge }}" alt="{{ t.app_store_alt }}" width="144" height="48"></a>
+  {%- endif %}
+  {%- if app.google_play %}
+  <a href="{{ app.google_play }}{% if page.lang == 'fr' %}&amp;hl=fr{% endif %}" rel="noopener"><img src="{{ t.google_play_badge }}" alt="{{ t.google_play_alt }}" width="161" height="48"></a>
+  {%- endif %}
+</div>

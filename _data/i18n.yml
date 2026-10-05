@@ -1,0 +1,66 @@
+en:
+  home: /
+  skip: Skip to content
+  nav_apps: Apps
+  nav_studio: Studio
+  nav_support: Support
+  nav_contact: Contact
+  lang_name: English
+  other_lang_label: FR
+  other_lang_title: Version française
+  footer_tagline: An independent app studio in Paris. We design and build native apps for iPhone and Android.
+  footer_apps: Apps
+  footer_company: Company
+  footer_legal: Legal
+  legal_notice: Legal notice
+  legal_url: /legal/
+  privacy: Privacy policy (My Caps)
+  ranker_privacy: Ranker privacy notice
+  ranker_privacy_url: /ranker/privacy-en
+  ranker_terms: Ranker terms of use
+  ranker_terms_url: /ranker/terms-en
+  support: Support
+  support_url: /support/
+  studio_url: /#studio
+  apps_url: /#apps
+  my_caps_url: /my-caps/
+  ranker_url: /ranker/
+  rights: All rights reserved.
+  capital_label: share capital
+  app_store_badge: /assets/badges/app-store-en.svg
+  app_store_alt: Download on the App Store
+  google_play_badge: /assets/badges/google-play-en.png
+  google_play_alt: Get it on Google Play
+fr:
+  home: /fr/
+  skip: Aller au contenu
+  nav_apps: Apps
+  nav_studio: Studio
+  nav_support: Support
+  nav_contact: Contact
+  lang_name: Français
+  other_lang_label: EN
+  other_lang_title: English version
+  footer_tagline: Un studio d'apps indépendant à Paris. Nous concevons et développons des apps natives pour iPhone et Android.
+  footer_apps: Apps
+  footer_company: Société
+  footer_legal: Légal
+  legal_notice: Mentions légales
+  legal_url: /fr/mentions-legales/
+  privacy: Confidentialité (My Caps)
+  ranker_privacy: Confidentialité de Ranker
+  ranker_privacy_url: /ranker/privacy
+  ranker_terms: Conditions d'utilisation de Ranker
+  ranker_terms_url: /ranker/terms
+  support: Support
+  support_url: /fr/support/
+  studio_url: /fr/#studio
+  apps_url: /fr/#apps
+  my_caps_url: /fr/my-caps/
+  ranker_url: /fr/ranker/
+  rights: Tous droits réservés.
+  capital_label: au capital de
+  app_store_badge: /assets/badges/app-store-en.svg
+  app_store_alt: Télécharger dans l'App Store
+  google_play_badge: /assets/badges/google-play-fr.png
+  google_play_alt: Disponible sur Google Play

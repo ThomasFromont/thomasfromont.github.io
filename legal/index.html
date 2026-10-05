@@ -1,0 +1,46 @@
+---
+layout: doc
+lang: en
+title: Legal notice — IceCode
+description: Legal notice of the icecode.fr website, published by ICECODE SASU, Paris.
+alternate_lang: fr
+alternate_url: /fr/mentions-legales/
+---
+{%- assign c = site.data.company -%}
+<div class="prose">
+  <p class="eyebrow">Legal</p>
+  <h1 style="margin-top:0.5rem">Legal notice</h1>
+  <p class="effective-date">This is a translation provided for convenience. The <a href="/fr/mentions-legales/" hreflang="fr" lang="fr">French version</a> is the reference.</p>
+
+  <h2>Publisher</h2>
+  <div class="identity">
+    <dl>
+      <dt>Company</dt><dd>{{ c.name }}</dd>
+      <dt>Legal form</dt><dd>{{ c.form_en }}</dd>
+      <dt>Share capital</dt><dd>{{ c.capital_en }}</dd>
+      <dt>Registered office</dt><dd>{{ c.address }}</dd>
+      <dt>Registration</dt><dd>{{ c.rcs }}</dd>
+      <dt>SIRET</dt><dd>{{ c.siret }}</dd>
+      <dt>EU VAT number</dt><dd>{{ c.vat }}</dd>
+      <dt>Publication director</dt><dd>{{ c.director }}, President</dd>
+      <dt>Contact</dt><dd><a href="mailto:{{ c.email }}">{{ c.email }}</a></dd>
+    </dl>
+  </div>
+  <p>ICECODE publishes the mobile apps My Caps (Capsy in Italian) and Ranker under the brand IceCode.</p>
+
+  <h2>Hosting</h2>
+  <p>This website is hosted by GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States — <a href="https://github.com" rel="noopener">github.com</a>.</p>
+
+  <h2>Intellectual property</h2>
+  <p>The content of this website — texts, illustrations, logos, app icons and screenshots — belongs to ICECODE unless stated otherwise. Reproducing it without permission is not allowed.</p>
+  <p>The typefaces Schibsted Grotesk and Hanken Grotesk are used under the SIL Open Font License. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+
+  <h2>Personal data and cookies</h2>
+  <p>This website sets no cookies and uses no audience measurement or tracking. Its fonts are served from this site, so visiting it sends no request to a third party other than the host. Like any web host, GitHub may record technical data such as IP addresses in its server logs, for security and operations.</p>
+  <p>How each app handles your data is described in its own notice:</p>
+  <ul>
+    <li><a href="/privacy">My Caps privacy policy</a></li>
+    <li><a href="/ranker/privacy-en">Ranker privacy notice</a> and <a href="/ranker/terms-en">terms of use</a></li>
+  </ul>
+  <p>To exercise your rights over your personal data, write to <a href="mailto:{{ c.email }}">{{ c.email }}</a>. You can also lodge a complaint with the CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
+</div>
