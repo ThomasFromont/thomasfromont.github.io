@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- assign fr = false -%}
+{%- if page.lang == "fr" -%}{%- assign fr = true -%}{%- endif %}
+<div class="wrap">
+  <article class="doc" style="padding-block: clamp(2.5rem, 6vw, 4rem) 0;">
+    <div class="doc-meta">
+      <span style="font-weight:500">Gamelle</span>
+      <span>
+        {%- if fr %}
+        <span aria-current="page">Français</span> · <a href="{{ page.alternate_url }}" hreflang="en" lang="en">English</a>
+        {%- else %}
+        <a href="{{ page.alternate_url }}" hreflang="fr" lang="fr">Français</a> · <span aria-current="page">English</span>
+        {%- endif %}
+      </span>
+    </div>
+
+    <!-- Names the app and the publishing entity as shown on the store listing.
+         The notice itself (below) is rendered from gamelle/privacy*.md; keep it
+         consistent with the in-app notice (PrivacyPolicyView), PrivacyInfo.xcprivacy
+         and the App Store label "Data Not Collected". -->
+    <div class="identity">
+      <dl>
+        <dt>{% if fr %}Application{% else %}App{% endif %}</dt>
+        <dd>Gamelle — <code>com.icecode.Gamelle</code> (App Store)</dd>
+
+        <dt>{% if fr %}Développeur{% else %}Developer{% endif %}</dt>
+        <dd>Thomas Fromont — {{ site.data.company.name }} (SASU)</dd>
+
+        <dt>{% if fr %}Société{% else %}Company{% endif %}</dt>
+        <dd>{{ site.data.company.name }} SASU, {{ site.data.company.address }} — {{ site.data.company.rcs }}</dd>
+
+        <dt>Contact</dt>
+        <dd><a href="mailto:support@icecode.fr">support@icecode.fr</a></dd>
+      </dl>
+    </div>
+
+    <div class="prose">
+{{ content }}
+    </div>
+  </article>
+</div>

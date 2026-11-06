@@ -1,6 +1,6 @@
 # icecode.fr
 
-Company website of ICECODE SASU (brand IceCode), publisher of the My Caps and Ranker apps.
+Company website of ICECODE SASU (brand IceCode), publisher of the My Caps, Ranker and Gamelle apps.
 Jekyll site served by GitHub Pages from `main`; pushing to `main` deploys it.
 
 **Read [DESIGN.md](DESIGN.md) before changing anything**: design tokens ("Glace & granit"),
@@ -9,7 +9,9 @@ components, page map (EN at `/`, FR at `/fr/`) and how to add an app.
 ## Rules
 
 - **Never move these URLs.** App Store Connect, the Play Console and the apps link to them:
-  `/privacy`, `/ranker/`, `/ranker/privacy`, `/ranker/privacy-en`, `/ranker/terms`, `/ranker/terms-en`.
+  `/privacy`, `/ranker/`, `/ranker/privacy`, `/ranker/privacy-en`, `/ranker/terms`, `/ranker/terms-en`, `/gamelle/privacy`, `/gamelle/privacy-en`.
+- **Gamelle has its own privacy notice** (`gamelle/privacy*.md`), not the shared `/privacy`:
+  it collects nothing, so the shared analytics sections must not apply to it.
 - **Ranker notices are verbatim copies** of the in-app texts (`ranker/*.md`, below the front matter).
   Change them only when the app's text changes.
 - **Keep the company identity visible and consistent** (footer + legal notice), from
