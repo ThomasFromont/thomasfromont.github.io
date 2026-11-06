@@ -4,3 +4,6 @@ my_caps:
 ranker:
   app_store:
   google_play:
+gamelle:
+  # Fill once Apple approves 1.0: https://apps.apple.com/app/id6826819953 (iPhone only, no Google Play).
+  app_store:

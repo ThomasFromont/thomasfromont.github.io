@@ -1,0 +1,118 @@
+---
+# Facts on this page come from the App Store listing in ../Gamelle/iOS/docs/app-store/metadata.
+# Gamelle is iPhone only (no iPad, no Android) and analyses an imported video, not a live one.
+layout: default
+og_image: gamelle
+lang: en
+title: Gamelle — Foosball stats from a video of your match
+description: Gamelle tracks the ball in a video of your foosball set, finds the goals and gives you the stats of every rod. On-device analysis, no account, no data collected. iPhone app by IceCode.
+alternate_lang: fr
+alternate_url: /fr/gamelle/
+body_class: app-gamelle
+favicon: /assets/img/gamelle/icon-512.png
+---
+<div class="wrap">
+  <section class="app-hero">
+    <div class="app-copy">
+      <img class="app-icon" src="/assets/img/gamelle/icon.webp" alt="Gamelle app icon" width="88" height="88">
+      <p class="eyebrow">Foosball stats</p>
+      <h1>Gamelle</h1>
+      <p class="lede">
+        Film a foosball set and Gamelle does the rest: it tracks the ball frame by frame,
+        finds the goals and gives you the stats of every rod. No score sheet, nothing to type
+        during the game.
+      </p>
+      {%- if site.data.apps.gamelle.app_store %}
+      {% include store-badges.html app="gamelle" %}
+      {%- else %}
+      <p><span class="pill pill-dot">Coming soon to the App Store</span></p>
+      {%- endif %}
+      <p class="muted" style="font-size:0.9375rem">Free · iPhone (iOS 26 or later) · English and French · Light and dark mode</p>
+    </div>
+    <div class="phones app-halo">
+      <figure class="phone"><img src="/assets/img/gamelle/en-1-stats.webp" alt="Stats of a set: Bleu beat Rouge 5–4, possessions rod by rod and attack conversion" width="540" height="1174"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/en-2-review.webp" alt="Goal review: each detected goal with its clip and Confirm or Reject buttons" width="540" height="1174"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/en-3-defense.webp" alt="Defense card: where the clearances went, to midfield, to attack or cut off by the opponent" width="540" height="1174"></figure>
+    </div>
+  </section>
+</div>
+
+<section class="section" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it does</p>
+      <h2 id="features-title">See where you win the ball, and where you lose it.</h2>
+      <p class="lede">Made for players who want to improve: know what your shots, passes and clearances really turn into.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>The ball, frame by frame</h3>
+        <p>Import the video of a set from your photos and tap the ball once. Gamelle follows it through the whole set, on your iPhone.</p>
+      </div>
+      <div class="feature">
+        <h3>Goals checked in one tap</h3>
+        <p>Gamelle suggests the goals it detected, gamelles included. Watch each goal's action, confirm or reject, add one it missed.</p>
+      </div>
+      <div class="feature">
+        <h3>Stats rod by rod</h3>
+        <p>Attack conversion, successful midfield passes, where your clearances go, and how many balls each team played on every rod.</p>
+      </div>
+      <div class="feature">
+        <h3>Your tempo</h3>
+        <p>Your usual time before shooting or passing. If it is too regular, the defender can read it.</p>
+      </div>
+      <div class="feature">
+        <h3>Your whole season</h3>
+        <p>Group your sets into matches and tournaments, 1 vs 1, 2 vs 2 or team relays. Your player profile adds up your stats, match after match.</p>
+      </div>
+      <div class="feature">
+        <h3>Share the result</h3>
+        <p>Send a set's result to your team from the share sheet, to the app and the people you choose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="filming-title">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow">Easy to film</p>
+      <h2 id="filming-title" style="font-size:var(--step-2)">A phone above the table is all it takes.</h2>
+      <ul class="ticks">
+        <li><strong>Film the set</strong> with a phone mounted above the table or behind a goal. The filming guide in the app gives you the few rules for a well-analysed video.</li>
+        <li><strong>Import the video</strong> into Gamelle and tap the ball once. The analysis takes a few minutes; keep the app open while it runs.</li>
+        <li><strong>Check the goals</strong>, and the stats of the set are ready.</li>
+      </ul>
+    </div>
+    <div class="phones" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <figure class="phone"><img src="/assets/img/gamelle/en-4-ball.webp" alt="Ball detection on a video frame of the table: ball tracked well" width="540" height="1174" loading="lazy"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/en-5-season.webp" alt="A tournament with its three matches and their scores" width="540" height="1174" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="privacy-title">
+  <div class="wrap split">
+    <div class="panel">
+      <p class="eyebrow">Privacy</p>
+      <h2 id="privacy-title" style="font-size:var(--step-2)">Your videos stay on your phone.</h2>
+      <ul class="ticks">
+        <li><strong>All the analysis runs on your iPhone.</strong> No server is involved.</li>
+        <li><strong>No account</strong>, no email, no phone number.</li>
+        <li><strong>No data collected.</strong> No ads, no tracking, no analytics.</li>
+        <li><strong>A set's video is deleted</strong> when you confirm its goals. Its stats are kept.</li>
+      </ul>
+      <p>
+        <a class="text-link" href="/gamelle/privacy-en">Privacy policy</a> ·
+        <a href="/gamelle/privacy" hreflang="fr" lang="fr">français</a>
+      </p>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Help</p>
+      <h2 style="font-size:var(--step-2)">Questions or ideas?</h2>
+      <p class="muted">Write to us from the app or by email. Every message is read by the person who builds Gamelle.</p>
+      <p><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></p>
+      <p><a class="text-link" href="/support/#gamelle">Support and frequently asked questions</a></p>
+    </div>
+  </div>
+</section>

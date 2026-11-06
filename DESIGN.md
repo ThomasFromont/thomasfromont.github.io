@@ -24,8 +24,8 @@ Pick by role, never by hue.
 | `--copper` | `#B8703F` | `#D88B5A` | Rare detail (status dot). **Never text.** |
 | `--bezel` | `#141C21` | `#2B3A43` | Phone frame around screenshots |
 
-App pages add `--app` (My Caps `#DE8D0A`, Ranker `#2E7294`) through `body_class`
-(`app-my-caps`, `app-ranker`). It is used for decoration only (the halo behind screenshots).
+App pages add `--app` (My Caps `#DE8D0A`, Ranker `#2E7294`, Gamelle `#1B5A49`) through `body_class`
+(`app-my-caps`, `app-ranker`, `app-gamelle`). It is used for decoration only (the halo behind screenshots).
 
 ## Typography
 
@@ -56,18 +56,23 @@ A six-armed ice crystal whose branches are code chevrons: `_includes/logo.svg` (
 | Home | `/` | `/fr/` |
 | My Caps | `/my-caps/` | `/fr/my-caps/` |
 | Ranker | `/ranker/` | `/fr/ranker/` |
+| Gamelle | `/gamelle/` | `/fr/gamelle/` |
 | Support | `/support/` | `/fr/support/` |
 | Legal notice | `/legal/` | `/fr/mentions-legales/` |
 | My Caps privacy | `/privacy` | — |
 | Ranker privacy / terms | `/ranker/privacy-en`, `/ranker/terms-en` | `/ranker/privacy`, `/ranker/terms` |
+| Gamelle privacy | `/gamelle/privacy-en` | `/gamelle/privacy` |
 
 **Stable URLs.** App Store Connect, the Play Console and the apps themselves link to `/privacy`,
-`/ranker/`, `/ranker/privacy(-en)` and `/ranker/terms(-en)`. Never move them.
+`/ranker/`, `/ranker/privacy(-en)`, `/ranker/terms(-en)` and `/gamelle/privacy(-en)`. Never move them.
 
-- Layout: `_layouts/default.html` (header + footer), `doc.html`, `ranker-privacy.html`.
+- Layout: `_layouts/default.html` (header + footer), `doc.html`, `ranker-privacy.html`,
+  `gamelle-privacy.html`.
 - Shared strings: `_data/i18n.yml`. Company facts (SIREN, address, capital…): `_data/company.yml`.
   Store links: `_data/apps.yml` — filling `ranker.app_store` / `google_play` makes the badges
-  appear wherever `store-badges.html` is included for Ranker.
+  appear wherever `store-badges.html` is included for Ranker. Filling `gamelle.app_store` swaps
+  the "coming soon" pill for the badge on the Gamelle pages (iPhone only, no Google Play);
+  the home shelf, showcase and support FAQ pills are edited by hand.
 - Each page sets `lang`, `alternate_lang` and `alternate_url` so the FR/EN switch and
   `hreflang` work.
 

@@ -1,0 +1,115 @@
+---
+# Les faits de cette page viennent de la fiche App Store (../Gamelle/iOS/docs/app-store/metadata).
+# Gamelle est sur iPhone seulement (ni iPad ni Android) et analyse une vidéo importée, pas en direct.
+layout: default
+og_image: gamelle
+lang: fr
+title: Gamelle — Les stats de vos matchs de baby-foot
+description: Gamelle suit la balle dans la vidéo d'une manche de baby-foot, retrouve les buts et donne les stats de chaque barre. Analyse sur l'iPhone, sans compte, aucune donnée collectée. App iPhone éditée par IceCode.
+alternate_lang: en
+alternate_url: /gamelle/
+body_class: app-gamelle
+favicon: /assets/img/gamelle/icon-512.png
+---
+<div class="wrap">
+  <section class="app-hero">
+    <div class="app-copy">
+      <img class="app-icon" src="/assets/img/gamelle/icon.webp" alt="Icône de l'app Gamelle" width="88" height="88">
+      <p class="eyebrow">Stats de baby-foot</p>
+      <h1>Gamelle</h1>
+      <p class="lede">
+        Filmez une manche de baby-foot, Gamelle fait le reste : elle suit la balle image par
+        image, retrouve les buts et vous donne les stats de chaque barre. Pas de feuille de
+        match, rien à saisir pendant le jeu.
+      </p>
+      {%- if site.data.apps.gamelle.app_store %}
+      {% include store-badges.html app="gamelle" %}
+      {%- else %}
+      <p><span class="pill pill-dot">Bientôt sur l'App Store</span></p>
+      {%- endif %}
+      <p class="muted" style="font-size:0.9375rem">Gratuite · iPhone (iOS 26 ou plus récent) · Français et anglais · Mode clair et sombre</p>
+    </div>
+    <div class="phones app-halo">
+      <figure class="phone"><img src="/assets/img/gamelle/fr-1-stats.webp" alt="Stats d'une manche : Bleu bat Rouge 5–4, possessions barre par barre et conversion en attaque" width="540" height="1174"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/fr-2-review.webp" alt="Revue des buts : chaque but détecté avec son extrait vidéo et les boutons Confirmer ou Rejeter" width="540" height="1174"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/fr-3-defense.webp" alt="Carte Défense : où sont parties les relances, vers les demis, vers l'attaque ou coupées par l'adversaire" width="540" height="1174"></figure>
+    </div>
+  </section>
+</div>
+
+<section class="section" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Ce qu'elle fait</p>
+      <h2 id="features-title">Voyez où vous gagnez la balle, et où vous la perdez.</h2>
+      <p class="lede">Pensée pour les joueurs qui veulent progresser : savoir ce que deviennent vraiment vos tirs, vos passes et vos relances.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>La balle, image par image</h3>
+        <p>Importez la vidéo d'une manche depuis vos photos et touchez la balle une fois. Gamelle la suit pendant toute la manche, sur votre iPhone.</p>
+      </div>
+      <div class="feature">
+        <h3>Des buts vérifiés en un geste</h3>
+        <p>Gamelle propose les buts qu'elle a détectés, gamelles comprises. Revoyez l'action de chaque but, confirmez ou rejetez, ajoutez un but manqué.</p>
+      </div>
+      <div class="feature">
+        <h3>Les stats barre par barre</h3>
+        <p>Conversion en attaque, passes réussies des demis, destination de vos relances, et nombre de balles jouées par chaque équipe sur chaque barre.</p>
+      </div>
+      <div class="feature">
+        <h3>Votre tempo</h3>
+        <p>Votre temps habituel avant de tirer ou de passer. S'il est trop régulier, le défenseur peut l'anticiper.</p>
+      </div>
+      <div class="feature">
+        <h3>Toute votre saison</h3>
+        <p>Rangez vos manches en matchs et en tournois, en 1 contre 1, 2 contre 2 ou par équipes en relais. Votre profil de joueur cumule vos stats, match après match.</p>
+      </div>
+      <div class="feature">
+        <h3>Partagez le résultat</h3>
+        <p>Envoyez le résultat d'une manche à votre équipe depuis le menu de partage, vers l'app et les personnes de votre choix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="filming-title">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow">Simple à filmer</p>
+      <h2 id="filming-title" style="font-size:var(--step-2)">Un téléphone au-dessus de la table suffit.</h2>
+      <ul class="ticks">
+        <li><strong>Filmez la manche</strong> avec un téléphone fixé au-dessus de la table ou derrière une cage. Le guide de tournage de l'app donne les quelques règles pour une vidéo bien analysée.</li>
+        <li><strong>Importez la vidéo</strong> dans Gamelle et touchez la balle une fois. L'analyse prend quelques minutes ; gardez l'app ouverte pendant qu'elle tourne.</li>
+        <li><strong>Vérifiez les buts</strong>, et les stats de la manche sont prêtes.</li>
+      </ul>
+    </div>
+    <div class="phones" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <figure class="phone"><img src="/assets/img/gamelle/fr-4-ball.webp" alt="Détection de la balle sur une image de la table : balle bien suivie" width="540" height="1174" loading="lazy"></figure>
+      <figure class="phone"><img src="/assets/img/gamelle/fr-5-season.webp" alt="Un tournoi avec ses trois matchs et leurs scores" width="540" height="1174" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="privacy-title">
+  <div class="wrap split">
+    <div class="panel">
+      <p class="eyebrow">Confidentialité</p>
+      <h2 id="privacy-title" style="font-size:var(--step-2)">Vos vidéos restent sur votre téléphone.</h2>
+      <ul class="ticks">
+        <li><strong>Toute l'analyse se fait sur votre iPhone.</strong> Aucun serveur n'intervient.</li>
+        <li><strong>Aucun compte</strong>, ni e-mail ni numéro de téléphone.</li>
+        <li><strong>Aucune donnée collectée.</strong> Pas de publicité, pas de pistage, pas de mesure d'audience.</li>
+        <li><strong>La vidéo d'une manche est supprimée</strong> quand vous validez ses buts. Ses stats sont gardées.</li>
+      </ul>
+      <p><a class="text-link" href="/gamelle/privacy">Politique de confidentialité</a></p>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Aide</p>
+      <h2 style="font-size:var(--step-2)">Une question, une idée ?</h2>
+      <p class="muted">Écrivez-nous depuis l'app ou par e-mail. Chaque message est lu par la personne qui développe Gamelle.</p>
+      <p><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></p>
+      <p><a class="text-link" href="/fr/support/#gamelle">Support et questions fréquentes</a></p>
+    </div>
+  </div>
+</section>

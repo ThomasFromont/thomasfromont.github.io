@@ -19,12 +19,15 @@ en:
   ranker_privacy_url: /ranker/privacy-en
   ranker_terms: Ranker terms of use
   ranker_terms_url: /ranker/terms-en
+  gamelle_privacy: Gamelle privacy policy
+  gamelle_privacy_url: /gamelle/privacy-en
   support: Support
   support_url: /support/
   studio_url: /#studio
   apps_url: /#apps
   my_caps_url: /my-caps/
   ranker_url: /ranker/
+  gamelle_url: /gamelle/
   rights: All rights reserved.
   capital_label: share capital
   app_store_badge: /assets/badges/app-store-en.svg
@@ -52,12 +55,15 @@ fr:
   ranker_privacy_url: /ranker/privacy
   ranker_terms: Conditions d'utilisation de Ranker
   ranker_terms_url: /ranker/terms
+  gamelle_privacy: Confidentialité de Gamelle
+  gamelle_privacy_url: /gamelle/privacy
   support: Support
   support_url: /fr/support/
   studio_url: /fr/#studio
   apps_url: /fr/#apps
   my_caps_url: /fr/my-caps/
   ranker_url: /fr/ranker/
+  gamelle_url: /fr/gamelle/
   rights: Tous droits réservés.
   capital_label: au capital de
   app_store_badge: /assets/badges/app-store-en.svg
