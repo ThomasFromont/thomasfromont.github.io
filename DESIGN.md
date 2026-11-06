@@ -24,7 +24,7 @@ Pick by role, never by hue.
 | `--copper` | `#B8703F` | `#D88B5A` | Rare detail (status dot). **Never text.** |
 | `--bezel` | `#141C21` | `#2B3A43` | Phone frame around screenshots |
 
-App pages add `--app` (My Caps `#DE8D0A`, Ranker `#2E7294`, Gamelle `#1B5A49`) through `body_class`
+App pages add `--app` (My Caps `#DE8D0A`, Ranker `#A06702`, Gamelle `#1B5A49`) through `body_class`
 (`app-my-caps`, `app-ranker`, `app-gamelle`). It is used for decoration only (the halo behind screenshots).
 
 ## Typography

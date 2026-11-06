@@ -1018,7 +1018,7 @@ dl.facts-list dd { margin: 0; color: var(--granite); }
    8. Per-app accents — decoration only (icon halo, tags); text stays on tokens
    -------------------------------------------------------------------------- */
 .app-my-caps { --app: #DE8D0A; }
-.app-ranker { --app: #2E7294; }
+.app-ranker { --app: #A06702; } /* Ranker "Mont Blanc" champagne */
 .app-gamelle { --app: #1B5A49; } /* Gamelle "tapis" felt green */
 
 .app-halo {
